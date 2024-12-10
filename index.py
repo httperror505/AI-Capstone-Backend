@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 import pickle  # or joblib for loading your trained model
 import os
+from flask_cors import CORS  # Import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 @app.route('/')
 def index():
     return render_template('index.html')
