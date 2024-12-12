@@ -18,13 +18,11 @@ def predict():
     data = request.json  # Parse incoming JSON data
     # Ensure the keys match your model's expected input
     input_features = [
-    data['Age'], data['Gender'],
-    data['ParentalEducation'], data['StudyTimeWeeklyCategory'], 
-    data['Absences'], data['Tutoring'], 
-    data['ParentalSupport'], data['ExtracurricularCategory'], 
-    data['YearLevel'], data['Subject'], data['PreviousGrades']
-]
-
+        data['Age'], data['Gender'],
+        data['ParentalEducation'], data['StudyTimeWeeklyCategory'], 
+        data['Absences'], data['Tutoring'], 
+        data['ParentalSupport'], data['ExtracurricularCategory'], data['Year Level'], data['Subject'], data['Previous Grades']
+    ]
     prediction = model.predict([input_features])  # Predict using your model
     grade_classes = {
         0: 'A (GPA >= 3.0)',
